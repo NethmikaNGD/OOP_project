@@ -1,0 +1,130 @@
+
+.course-Section-area {
+    display: flex; /* Flexbox layout */
+    flex-wrap: wrap; /* Allows cards to wrap to the next line */
+    justify-content: space-between; /* Spaces cards evenly */
+    gap: 20px; /* Adds spacing between cards */
+    width: 90%; /* Width of the card section */
+    margin: 0 auto; /* Center the section horizontally */
+    background-color: #f9f9f9; /* Optional background color */
+    padding: 20px; /* Optional padding for spacing around cards */
+}
+
+.card {
+    width: calc(20% - 20px); /* Ensures 5 cards fit in one row with gaps */
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-image {
+    position: relative;
+}
+
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card-logo img {
+    width: 100%;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.card-content h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 8px;
+    color: #333333;
+}
+
+.card-content .authors {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 12px;
+}
+
+.rating-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.rating span {
+    margin-right: 4px;
+}
+
+.rating .stars {
+    color: #ffc107;
+}
+
+.rating .reviews {
+    font-size: 12px;
+    color: #666666;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #0082e6;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+.Course-Section-area{
+    justify-content: center;
+    width: 95%;
+    background-color: #C9F4FD;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.Course-Section-area1{
+    width: 95%;
+    display: flex; /* Flexbox layout */
+    flex-wrap: wrap; /* Allows cards to wrap to the next line */
+    justify-content: center; /* Spaces cards evenly */
+    gap: 20px; /* Adds spacing between cards */
+ /* Width of the card section */
+    margin: 0 auto; /* Center the section horizontally */
+     /* Optional background color */
+    padding: 20px; /* Optional padding for spacing around cards */
+
+}

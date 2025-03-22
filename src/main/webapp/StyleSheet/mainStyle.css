@@ -1,0 +1,66 @@
+
+.loging-form{
+    background-color: #A4DAF8;
+    height: 425px;
+    width: 500px;
+    text-align: justify;
+    position: absolute;
+    right: 10pc;
+    top: 12pc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 3px 1px 0px 5px rgb(0, 97, 197);
+
+}
+.form-header{
+    font-size: 32px;
+    cursor: alias;
+}
+.userinput{
+    font-size: 23px;
+    margin: 10px 0 10px 0;
+    width: 400px;
+
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    color: #3037CD;
+}
+.header-form{
+    font-weight: bold;
+    color: #3037CD;
+}
+.txt{
+    margin: 0 0 0 15px;
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: initial;
+
+}
+.loginBttn{
+    height: 65px;
+    width: 100%;
+    border: none;
+    margin: 10 0 0 0px;
+    border-radius: 6px;
+    font-size: 20px;
+
+}
+.action{
+    background-color: #0082e6;
+    color: white;
+    font-weight: bold;
+}
+.action1{
+    background-color:#4ba5ff;
+    color: white;
+    font-weight: bold;
+}
+
+
+section {
+     background: url("bg.jpg") no-repeat;
+     background-size: cover;
+     height: calc(100vh - 80px);
+
+ }
