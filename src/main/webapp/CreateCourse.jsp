@@ -11,6 +11,24 @@
     <title>Create Course</title>
 </head>
 <body>
+    <div class="Course-form">
+        <h2>Create Course</h2>
+        <form action="CreateCourse" method="post">
+            <label for="courseName">Course Name:</label>
+            <input type="text" id="courseName" name="courseName" required><br><br>
+
+            <label for="courseName">Author Name:</label>
+            <input type="text" id="authorName" name="authorName" required><br><br>
+
+            <label for="courseName">Price:</label>
+            <input type="text" id="price" name="price" required><br><br>
+
+            <label for="courseDescription">Course Description:</label>
+            <textarea id="courseDescription" name="courseDescription" required></textarea><br><br>
+
+            <a href="home.jsp"><button type="submit">Create Course</button></a>
+        </form>
+    </div>
 
 </body>
 </html>

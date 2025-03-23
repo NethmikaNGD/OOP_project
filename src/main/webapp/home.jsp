@@ -6,6 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Arrays" %>
+
 <html>
 <head>
     <title>CourseEnroll | Courses</title>
@@ -45,348 +48,48 @@
     <p class="course-header">Most Popular Courses</p>
 </div>
 
-    <div class = "Course-Section-area">
-        <div class="card"> <a href="#course">
-            <div class="card-image">
-                <img src="assects/courseIMG.png" alt="Course Thumbnail">
-            </div>
-            <div class="card-content">
-                <h3> Let's Start Web Developments</h3>
-                <p class="authors">Juloa Melansol, Benza Maman</p>
-                <div class="rating-price">
-                    <div class="rating">
-                        <span>4.5</span>
-                        <span class="stars">★★★★★</span>
-                        <span class="reviews">(45,406)</span>
-                    </div>
-                    <div class="price">$49.99</div>
-                </div>
-                <div class="badge">Bestseller</div>
-            </div>
-        </a>
-        </div>
-
-        <div class="card">
-            <div class="card-image">
-                <img src="assects/courseIMG.png" alt="Course Thumbnail">
-            </div>
-            <div class="card-content">
-                <h3> The Complete AI Guide: Learn ChatGPT, Generative AI & More</h3>
-                <p class="authors">Juloa Melansol, Benza Maman</p>
-                <div class="rating-price">
-                    <div class="rating">
-                        <span>4.5</span>
-                        <span class="stars">★★★★★</span>
-                        <span class="reviews">(45,406)</span>
-                    </div>
-                    <div class="price">$49.99</div>
-                </div>
-                <div class="badge">Bestseller</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-image">
-                <img src="assects/courseIMG.png" alt="Course Thumbnail">
-            </div>
-            <div class="card-content">
-                <h3> The Complete AI Guide: Learn ChatGPT, Generative AI & More</h3>
-                <p class="authors">Juloa Melansol, Benza Maman</p>
-                <div class="rating-price">
-                    <div class="rating">
-                        <span>4.5</span>
-                        <span class="stars">★★★★★</span>
-                        <span class="reviews">(45,406)</span>
-                    </div>
-                    <div class="price">$49.99</div>
-                </div>
-                <div class="badge">Bestseller</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-image">
-                <img src="assects/courseIMG.png" alt="Course Thumbnail">
-            </div>
-            <div class="card-content">
-                <h3> The Complete AI Guide: Learn ChatGPT, Generative AI & More</h3>
-                <p class="authors">Juloa Melansol, Benza Maman</p>
-                <div class="rating-price">
-                    <div class="rating">
-                        <span>4.5</span>
-                        <span class="stars">★★★★★</span>
-                        <span class="reviews">(45,406)</span>
-                    </div>
-                    <div class="price">$49.99</div>
-                </div>
-                <div class="badge">Bestseller</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-image">
-                <img src="assects/courseIMG.png" alt="Course Thumbnail">
-            </div>
-            <div class="card-content">
-                <h3> The Complete AI Guide: Learn ChatGPT, Generative AI & More</h3>
-                <p class="authors">Juloa Melansol, Benza Maman</p>
-                <div class="rating-price">
-                    <div class="rating">
-                        <span>4.5</span>
-                        <span class="stars">★★★★★</span>
-                        <span class="reviews">(45,406)</span>
-                    </div>
-                    <div class="price">$49.99</div>
-                </div>
-                <div class="badge">Bestseller</div>
-            </div>
-        </div>
-    </div>
-
 <br>
 <div class="Course-header">
     <p class="course-header">Recommended Courses</p>
 </div>
 
 <div class = "Course-Section-area1">
+    <%
+        List<String[]> courses = (List<String[]>) request.getAttribute("courses");
+        if (courses != null && !courses.isEmpty()) { // Ensure courses list is not null or empty
+            for (String[] course : courses) {
+    %>
     <div class="card">
         <div class="card-image">
-            <img src="assects/courseIMG.png" alt="Course Thumbnail">
+            <img src="assets/courseIMG.png" alt="Course Thumbnail">
         </div>
         <div class="card-content">
-            <h3> The Complete AI Guide: Learn ChatGPT, Generative AI & More</h3>
-            <p class="authors">Juloa Melansol, Benza Maman</p>
+            <h3><%= course[0] %></h3> <!-- Course Name -->
+            <p class="authors"><%= course[1] %></p> <!-- Author -->
             <div class="rating-price">
                 <div class="rating">
                     <span>4.5</span>
                     <span class="stars">★★★★★</span>
                     <span class="reviews">(45,406)</span>
                 </div>
-                <div class="price">$49.99</div>
+                <div class="price"><%= course[2] %></div> <!-- Price -->
             </div>
-            <div class="badge">Bestseller</div>
+<%--            <p class="description"><%= course[3] %></p> <!-- Description -->--%>
+            <div class="badge">New</div>
         </div>
     </div>
-
-    <div class="card">
-        <div class="card-image">
-            <img src="assects/courseIMG.png" alt="Course Thumbnail">
-        </div>
-        <div class="card-content">
-            <h3> The Complete AI Guide: Learn ChatGPT, Generative AI & More</h3>
-            <p class="authors">Juloa Melansol, Benza Maman</p>
-            <div class="rating-price">
-                <div class="rating">
-                    <span>4.5</span>
-                    <span class="stars">★★★★★</span>
-                    <span class="reviews">(45,406)</span>
-                </div>
-                <div class="price">$49.99</div>
-            </div>
-            <div class="badge">Bestseller</div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image">
-            <img src="assects/courseIMG.png" alt="Course Thumbnail">
-        </div>
-        <div class="card-content">
-            <h3> The Complete AI Guide: Learn ChatGPT, Generative AI & More</h3>
-            <p class="authors">Juloa Melansol, Benza Maman</p>
-            <div class="rating-price">
-                <div class="rating">
-                    <span>4.5</span>
-                    <span class="stars">★★★★★</span>
-                    <span class="reviews">(45,406)</span>
-                </div>
-                <div class="price">$49.99</div>
-            </div>
-            <div class="badge">Bestseller</div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image">
-            <img src="assects/courseIMG.png" alt="Course Thumbnail">
-        </div>
-        <div class="card-content">
-            <h3> The Complete AI Guide: Learn ChatGPT, Generative AI & More</h3>
-            <p class="authors">Juloa Melansol, Benza Maman</p>
-            <div class="rating-price">
-                <div class="rating">
-                    <span>4.5</span>
-                    <span class="stars">★★★★★</span>
-                    <span class="reviews">(45,406)</span>
-                </div>
-                <div class="price">$49.99</div>
-            </div>
-            <div class="badge">Bestseller</div>
-        </div>
-    </div>
-
-</div>
-
-<div class = "Course-Section-area1">
-    <div class="card">
-        <div class="card-image">
-            <img src="assects/courseIMG.png" alt="Course Thumbnail">
-        </div>
-        <div class="card-content">
-            <h3> The Complete AI Guide: Learn ChatGPT, Generative AI & More</h3>
-            <p class="authors">Juloa Melansol, Benza Maman</p>
-            <div class="rating-price">
-                <div class="rating">
-                    <span>4.5</span>
-                    <span class="stars">★★★★★</span>
-                    <span class="reviews">(45,406)</span>
-                </div>
-                <div class="price">$49.99</div>
-            </div>
-            <div class="badge">Bestseller</div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image">
-            <img src="assects/courseIMG.png" alt="Course Thumbnail">
-        </div>
-        <div class="card-content">
-            <h3> The Complete AI Guide: Learn ChatGPT, Generative AI & More</h3>
-            <p class="authors">Juloa Melansol, Benza Maman</p>
-            <div class="rating-price">
-                <div class="rating">
-                    <span>4.5</span>
-                    <span class="stars">★★★★★</span>
-                    <span class="reviews">(45,406)</span>
-                </div>
-                <div class="price">$49.99</div>
-            </div>
-            <div class="badge">Bestseller</div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image">
-            <img src="assects/courseIMG.png" alt="Course Thumbnail">
-        </div>
-        <div class="card-content">
-            <h3> The Complete AI Guide: Learn ChatGPT, Generative AI & More</h3>
-            <p class="authors">Juloa Melansol, Benza Maman</p>
-            <div class="rating-price">
-                <div class="rating">
-                    <span>4.5</span>
-                    <span class="stars">★★★★★</span>
-                    <span class="reviews">(45,406)</span>
-                </div>
-                <div class="price">$49.99</div>
-            </div>
-            <div class="badge">Bestseller</div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image">
-            <img src="assects/courseIMG.png" alt="Course Thumbnail">
-        </div>
-        <div class="card-content">
-            <h3> The Complete AI Guide: Learn ChatGPT, Generative AI & More</h3>
-            <p class="authors">Juloa Melansol, Benza Maman</p>
-            <div class="rating-price">
-                <div class="rating">
-                    <span>4.5</span>
-                    <span class="stars">★★★★★</span>
-                    <span class="reviews">(45,406)</span>
-                </div>
-                <div class="price">$49.99</div>
-            </div>
-            <div class="badge">Bestseller</div>
-        </div>
-    </div>
-
-</div>
-
-<div class = "Course-Section-area1">
-    <div class="card">
-        <div class="card-image">
-            <img src="assects/courseIMG.png" alt="Course Thumbnail">
-        </div>
-        <div class="card-content">
-            <h3> The Complete AI Guide: Learn ChatGPT, Generative AI & More</h3>
-            <p class="authors">Juloa Melansol, Benza Maman</p>
-            <div class="rating-price">
-                <div class="rating">
-                    <span>4.5</span>
-                    <span class="stars">★★★★★</span>
-                    <span class="reviews">(45,406)</span>
-                </div>
-                <div class="price">$49.99</div>
-            </div>
-            <div class="badge">Bestseller</div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image">
-            <img src="assects/courseIMG.png" alt="Course Thumbnail">
-        </div>
-        <div class="card-content">
-            <h3> The Complete AI Guide: Learn ChatGPT, Generative AI & More</h3>
-            <p class="authors">Juloa Melansol, Benza Maman</p>
-            <div class="rating-price">
-                <div class="rating">
-                    <span>4.5</span>
-                    <span class="stars">★★★★★</span>
-                    <span class="reviews">(45,406)</span>
-                </div>
-                <div class="price">$49.99</div>
-            </div>
-            <div class="badge">Bestseller</div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image">
-            <img src="assects/courseIMG.png" alt="Course Thumbnail">
-        </div>
-        <div class="card-content">
-            <h3> The Complete AI Guide: Learn ChatGPT, Generative AI & More</h3>
-            <p class="authors">Juloa Melansol, Benza Maman</p>
-            <div class="rating-price">
-                <div class="rating">
-                    <span>4.5</span>
-                    <span class="stars">★★★★★</span>
-                    <span class="reviews">(45,406)</span>
-                </div>
-                <div class="price">$49.99</div>
-            </div>
-            <div class="badge">Bestseller</div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image">
-            <img src="assects/courseIMG.png" alt="Course Thumbnail">
-        </div>
-        <div class="card-content">
-            <h3> The Complete AI Guide: Learn ChatGPT, Generative AI & More</h3>
-            <p class="authors">Juloa Melansol, Benza Maman</p>
-            <div class="rating-price">
-                <div class="rating">
-                    <span>4.5</span>
-                    <span class="stars">★★★★★</span>
-                    <span class="reviews">(45,406)</span>
-                </div>
-                <div class="price">$49.99</div>
-            </div>
-            <div class="badge">Bestseller</div>
-        </div>
-    </div>
-
-</div>
+    <%
+        } // Closing loop
+    } else { // Handle case when no courses are available
+    %>
+    <p>No courses available.</p>
+    <%
+        } // Closing if condition
+    %>
 
 
 
+</div><!-- course-section-area-->
 
 </body>
 </html>

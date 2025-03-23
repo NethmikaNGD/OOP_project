@@ -44,7 +44,7 @@
         </div>
         <div class="button">
             <a href="home.jsp" class="loginBttn "><button class="loginBttn action">Login</button></a>
-            <a href="#register" class="loginBttn"><button class="loginBttn action1">Register</button></a>
+            <a href="register.jsp" class="loginBttn"><button class="loginBttn action1">Register</button></a>
         </div>
 
     </div>
