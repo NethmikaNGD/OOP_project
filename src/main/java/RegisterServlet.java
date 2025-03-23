@@ -14,46 +14,68 @@ public class RegisterServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-
         PrintWriter out = response.getWriter();
 
-        //save the userdata local variables:
-        String firstname=request.getParameter("firstName");
-        String lastname=request.getParameter("lastName");
-        String username=request.getParameter("username");
-        String email=request.getParameter("email");
-        String birthdate=request.getParameter("birthDate");
-        String gender=request.getParameter("gender");
-        String role=request.getParameter("role");
-        String password=request.getParameter("password");
-        String ConPassword=request.getParameter("ConPassword");
+        // Save the user data from the form:
+        String firstname = request.getParameter("firstName");
+        String lastname = request.getParameter("lastName");
+        String username = request.getParameter("username");
+        String email = request.getParameter("email");
+        String birthdate = request.getParameter("birthDate");
+        String gender = request.getParameter("gender");
+        String role = request.getParameter("role");
+        String password = request.getParameter("password");
+        String conPassword = request.getParameter("ConPassword");
 
-        //Handling multiple selection interests:
-        String[] interests=request.getParameterValues("interests");
-        String interestsList = (interests != null) ? String.join(",", interests) : null;
+        // Handling multiple selection interests
+        String[] interests = request.getParameterValues("interests");
+        String interestsList = (interests != null) ? String.join(", ", interests) : "No interests selected";
 
-        //Write the txt file (save the database)
+        // File paths
         String filePath;
         String userPass;
+        String allUserPass = "D:\\OOP_project\\src\\main\\DataSaveFile\\password\\allPass.txt";
+        String userLike = "D:\\OOP_project\\src\\main\\DataSaveFile\\userInstrest.txt";
 
-        if (Objects.equals(role, "Student")){
+        if ("Student".equals(role)) {
             filePath = "D:\\OOP_project\\src\\main\\DataSaveFile\\regStudent.txt";
             userPass = "D:\\OOP_project\\src\\main\\DataSaveFile\\password\\stdPass.txt";
-        }else {
+        } else {
             filePath = "D:\\OOP_project\\src\\main\\DataSaveFile\\regInstructor.txt";
             userPass = "D:\\OOP_project\\src\\main\\DataSaveFile\\password\\insPass.txt";
         }
 
-        try(FileWriter FileWrite = new FileWriter(filePath , true)) {
-            FileWrite.write(firstname + "\t" + lastname + "\t" + email + "\t" + birthdate + "\t" + gender + "\n");
-            try(FileWriter passWrite = new FileWriter(userPass , true)) {
-                passWrite.write(username + "\t" + email + "\t" + password + "\t" + ConPassword + "\n");
-            }
+        // Writing to files with proper try-with-resources
+        try (
+                FileWriter fileWriter = new FileWriter(filePath, true);
+                FileWriter passwordWriter1 = new FileWriter(userPass, true);
+                FileWriter userLike1 = new FileWriter(userLike, true);
+                FileWriter passwordWriter2 = new FileWriter(allUserPass, true)
+        ) {
+            fileWriter.write(firstname + "\t" + lastname + "\t" + email + "\t" + birthdate + "\t" + gender + "\t" + "\n");
+            passwordWriter1.write(username + "\t" + email + "\t" + password + "\t" + conPassword + "\n");
+            passwordWriter2.write(username + "\t" + email + "\t" + password + "\n");
+            userLike1.write(username + "\t" + interestsList + "\n");
+
             System.out.println("Success .. update...");
-        }catch(IOException e){
-            System.out.println("could not write file");
+
+            // Send confirmation response to the user
+            out.println("<h2>Registration Successful</h2>");
+            out.println("<p>First Name: " + firstname + "</p>");
+            out.println("<p>Last Name: " + lastname + "</p>");
+            out.println("<p>Username: " + username + "</p>");
+            out.println("<p>Email: " + email + "</p>");
+            out.println("<p>Birth Date: " + birthdate + "</p>");
+            out.println("<p>Gender: " + gender + "</p>");
+            out.println("<p>Role: " + role + "</p>");
+            out.println("<p>Interests: " + interestsList + "</p>");
+            out.println("<a href='register.jsp'>Go Back</a>");
+
+        } catch (IOException e) {
+            System.out.println("Could not write file: " + e.getMessage());
+            out.println("<h2>Registration Failed</h2>");
+            out.println("<p>An error occurred while saving your data.</p>");
+            out.println("<a href='register.jsp'>Try Again</a>");
         }
-
-
     }
 }
