@@ -1,0 +1,6 @@
+Java Programming | John Doe | $5000 | Learn Java from scratch.
+Cyber Security | Alice Smith | $7000 | Master Cyber Security basics.
+Web Development | Mark Lee | $6000 | Build websites with HTML, CSS, JS.
+Mobile App Developments | Oliver Lucas | $1000 | Check out all the tools and benefits that can help you scale your success.
+Cyber Security	Alice Smith	 $7000	 Master Cyber Security basics.
+100 Days of Code: The Complete Python Pro Bootcamp	Dr. Angela Yu, Developer and Lead Instructor	 $74.79	 Welcome to the 100 Days of Code - The Complete Python Pro Bootcamp, the only course you need to learn to code with Python. With over 500,000 5 STAR reviews and a 4.8 average, my courses are some of the HIGHEST RATED courses in the history of Udemy!  
