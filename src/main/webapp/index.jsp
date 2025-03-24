@@ -2,55 +2,48 @@
 <html>
     <head>
         <title>CounseEnroll</title>
-        <link rel="stylesheet" href="StyleSheet/mainStyle.css">
-        <link rel="stylesheet" href="StyleSheet/navi.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<%--        <link rel="stylesheet" href="StyleSheet/mainStyle.css">--%>
+<%--        <link rel="stylesheet" href="StyleSheet/navi.css">--%>
+<%--        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />--%>
 <%--        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">--%>
     </head>
 
     <body>
     <!-- Navbar -->
+    <!-- Navbar -->
     <nav>
-        <!-- Checkbox for toggling menu -->
-        <input type="checkbox" id="check">
-        <!-- Menu icon -->
-        <label for="check" class="checkbtn">
-            <i class="fas fa-bars"></i>
-        </label>
-        <!-- Site logo -->
         <label class="logo">CourseEnroll</label>
-        <!-- Navigation links -->
         <ul>
-            <li><a class="active" href="#">Courrse</a></li>
-            <li><a href="#">Catagory</a></li>
-<%--            <li><a href="#">Profile</a></li>--%>
+            <li><a href="index.jsp">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Categories</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="#">Feedback</a></li>
         </ul>
     </nav>
 
-    <div class="loging-form">
+    <div class="login-form">
         <div class="form-header">
             <p class="header-form"> Welcome Back</p>
         </div>
-        <div class="userInput">
-            <label>
-                <input type="email"  name="userName" placeholder="UserName or Email" class="userinput">
-                <input type="password"  name="usePassword" placeholder="Password" class="userinput">
-            </label>
-        </div>
-        <div class = "pssword-forget">
-          <a href="#forgetpass" class="txt" > <p class="txt" title="Create the new Password">Forgett Password ?</p></a>
-        </div>
-        <div class="button">
-            <a href="home.jsp" class="loginBttn "><button class="loginBttn action">Login</button></a>
-            <a href="register.jsp" class="loginBttn"><button class="loginBttn action1">Register</button></a>
-        </div>
 
+        <!-- Login Form -->
+        <form action="LoginSer" method="post">
+            <div class="userInput">
+                <input type="text" name="username" placeholder="Username or Email" class="userinput" required>
+                <input type="password" name="password" placeholder="Password" class="userinput" required>
+            </div>
+
+            <div class="password-forget">
+                <a href="#forgetpass" class="txt">Forget Password?</a>
+            </div>
+
+            <div class="button">
+                <button type="submit" class="loginBttn action">Login</button>
+                <a href="register.jsp" class="loginBttn action1">Register</a>
+            </div>
+        </form>
     </div>
-
-
-
 
 
 

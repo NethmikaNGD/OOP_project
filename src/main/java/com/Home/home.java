@@ -1,3 +1,5 @@
+package com.Home;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,11 +12,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/home")
-public class homeServlet extends HttpServlet {
+//@WebServlet("/home")
+public class home extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    public homeServlet() {
+    public home() {
         super();
     }
 

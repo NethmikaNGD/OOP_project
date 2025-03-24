@@ -1,2 +1,3 @@
-sad	Mathematics, Science, Programming, History, Literature, Physics, Chemistry, Arts
-sdf	Mathematics, Science, Chemistry
+SpicyDn	Science, Literature
+dineth42	Mathematics
+sds	Mathematics

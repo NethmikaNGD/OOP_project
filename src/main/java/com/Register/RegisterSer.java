@@ -1,3 +1,6 @@
+package com.Register;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,8 +11,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Objects;
 
-@WebServlet("/RegisterServlet")
-public class RegisterServlet extends HttpServlet {
+//@WebServlet("/RegisterServlet")
+public class RegisterSer extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -59,17 +62,9 @@ public class RegisterServlet extends HttpServlet {
 
             System.out.println("Success .. update...");
 
-            // Send confirmation response to the user
-            out.println("<h2>Registration Successful</h2>");
-            out.println("<p>First Name: " + firstname + "</p>");
-            out.println("<p>Last Name: " + lastname + "</p>");
-            out.println("<p>Username: " + username + "</p>");
-            out.println("<p>Email: " + email + "</p>");
-            out.println("<p>Birth Date: " + birthdate + "</p>");
-            out.println("<p>Gender: " + gender + "</p>");
-            out.println("<p>Role: " + role + "</p>");
-            out.println("<p>Interests: " + interestsList + "</p>");
-            out.println("<a href='register.jsp'>Go Back</a>");
+//            // Send confirmation response to the user
+//            out.println("<h2>Registration Successful</h2>");
+//            out.println("<a href='index.jsp'>Go Back</a>");
 
         } catch (IOException e) {
             System.out.println("Could not write file: " + e.getMessage());
@@ -77,5 +72,11 @@ public class RegisterServlet extends HttpServlet {
             out.println("<p>An error occurred while saving your data.</p>");
             out.println("<a href='register.jsp'>Try Again</a>");
         }
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+        dispatcher.forward(request, response);
+
+
+
     }
 }

@@ -14,7 +14,7 @@
 <body>
 <h2>Student & Instructor Registration</h2>
 
-<form action="RegisterServlet" method="post">
+<form action="RegisterSer" method="post">
     <label for="firstName">First Name:</label>
     <input type="text" id="firstName" name="firstName" required><br><br>
 
@@ -79,7 +79,7 @@
     <label for="arts">Arts</label><br><br>
 
 
-    <input type="submit" value="Register">
+    <input type="submit" value="Register" href="index.jsp">
 </form>
 </body>
 </html>
